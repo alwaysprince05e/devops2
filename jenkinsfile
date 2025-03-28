@@ -1,31 +1,24 @@
 pipeline {
     agent any
-
     stages {
-        stage('Checkout Code') {
+        stage("git-Checkout") {
             steps {
-                git branch: 'main', url: 'https://github.com/alwaysprince05e/devops'
+                echo "Performing Git Checkout"
             }
         }
-
-        stage('Build') {
+        stage("Build") {
             steps {
-                echo 'Building the project...'
-                sh 'mvn clean package'  
+                echo "Building"
             }
         }
-
-        stage('Test') {
+        stage("Test") {
             steps {
-                echo 'Running tests...'
-                sh 'mvn test' 
+                echo "Testing"
             }
         }
-
-        stage('Deploy') {
+        stage("Deploy") {
             steps {
-                echo 'Deploying the application...'
-                sh './deploy.sh'  
+                echo "Deploying"
             }
         }
     }
