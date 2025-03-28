@@ -9,7 +9,7 @@ To automate our DevOps process, we use GitHub Actions. Below is a basic workflow
 
 Inside your repository, create a new file at `.github/workflows/ci.yml` with the following content:
 
-```yaml
+```yaml 
 name: CI Pipeline
 
 on:
@@ -51,4 +51,4 @@ git push origin main
 ```
 
 Now, every time you push or open a pull request to the `main` branch, the workflow will automatically run.
-
+ 
